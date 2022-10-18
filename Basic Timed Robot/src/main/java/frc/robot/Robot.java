@@ -44,12 +44,13 @@ public class Robot extends TimedRobot {
   public void autonomousPeriodic() {
     double time = Timer.getFPGATimestamp();
     System.out.println(time - startTime);
+    double autonSpeed = 0.2; //speed of motors -1 through 1 (min - max) during autonomous peroid
 
     if (time - startTime < 3) {
-      leftMotor1.set(0.6);
-      leftMotor2.set(0.6);
-      rightMotor1.set(-0.6);
-      rightMotor2.set(-0.6);
+      leftMotor1.set(autonSpeed); //set motors to spin at autonSpeed during autonoums peroid
+      leftMotor2.set(autonSpeed);
+      rightMotor1.set(-autonSpeed);
+      rightMotor2.set(-autonSpeed);
     } else {
       leftMotor1.set(0);
       leftMotor2.set(0);
